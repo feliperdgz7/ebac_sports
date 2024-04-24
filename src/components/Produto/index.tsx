@@ -20,10 +20,8 @@ const ProdutoComponent = ({ produto, estaNosFavoritos }: Props) => {
   const dispatch = useDispatch()
 
   const handleFavoritar = () => {
-    console.log('ID do produto a ser favoritado:', produto.id)
     dispatch(favoritar(produto))
   }
-  console.log('Esta nos favoritos?', estaNosFavoritos)
   return (
     <S.Produto>
       <S.Capa>
