@@ -2,14 +2,14 @@ import { Produto as ProdutoType } from '../App'
 import Produto from '../components/Produto'
 import { useGetProdutosQuery } from '../services/api'
 import { useSelector } from 'react-redux'
-import { RootState } from '../store'
+import { RootReducer } from '../store'
 
 import * as S from './styles'
 
 const ProdutosComponent = () => {
   const { data: produtos, isLoading } = useGetProdutosQuery()
-  const favoritos = useSelector((state: RootState) => {
-    return state.favoritos
+  const favoritos = useSelector((state: RootReducer) => {
+    return state.favoritos.itens
   })
   if (isLoading) return <h2>Carregando...</h2>
 
